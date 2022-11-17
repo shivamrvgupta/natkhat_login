@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <style>
+      .outer {
+        margin: auto;
+        height: 300px;
+        width: 400px;
+        border: 2px solid black;
+        position: relative;
+      }
+      p {
+        margin-left: 80px;
+      }
+      .text {
+        margin-left: 80px;
+        padding: 10px;
+      }
+      .password {
+        margin-left: 80px;
+        padding: 10px;
+      }
+      #bt {
+        margin-top: 20px;
+        position: absolute;
+        left: 150px;
+      }
+      #bt:hover {
+        background: green;
+        font-size: 13px;
+        cursor: pointer;
+        color: white;
+      }
+    </style>
+    <script>
+      function input() {
+        if (text.value == "" || password.value == "") {
+          f();
+          document.getElementById("text").style.border = "3px solid red";
+          document.getElementById("password").style.border = "3px solid red";
+          bt.value = "❤️de data dala pehle!";
+        } else {
+          document.getElementById("text").style.border = "3px solid green";
+          document.getElementById("password").style.border = "3px solid green";
+          bt.value = "Ha ab thik h";
+          bt.style.left = "120px";
+        }
+      }
+      
+      function alertf() {
+        if (text.value == "" || password.value == "" || bt.onclick == true) {
+          f();
+          document
+            .getElementById("bt")
+            .addEventListener(alert("Baap Se bakchodi nhi "));
+        } else {
+          document
+            .getElementById("bt")
+            .addEventListener(alert("waa mere bete"));
+        }
+      }
+      flag = 1;
+      function f() {
+        if (flag == 1) {
+          bt.style.left = "210px";
+          flag = 2;
+        } else if (flag == 2) {
+          bt.style.left = "80px";
+          flag = 1;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="outer">
+      <h1 style="text-align: center">THE SMART FORM</h1>
+      <p>Enter Id</p>
+      <input class="text" type="text" placeholder="Enter id" id="text" />
+      <p>Enter Confirm Pass</p>
+      <input
+        class="password"
+        type="password"
+        placeholder="Enter password"
+        id="password"
+      />
+      <br />
+      <input type="submit" onmouseenter="input()" onclick="alertf()" id="bt" />
+    </div>
+  </body>
+</html>
